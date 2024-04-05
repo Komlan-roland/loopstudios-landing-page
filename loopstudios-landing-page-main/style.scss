@@ -1,0 +1,503 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+@import url('https://fonts.google.com/specimen/Josefin+Sans');
+
+* {
+    margin: 0;
+    list-style: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Alata', sans-serif;
+}
+
+// ? debut du header
+header {
+    background-image: url(./images/desktop/image-hero.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 3.5rem 8%;
+
+    #menu {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        :is(#openMenu, #closeMenu) {
+            cursor: pointer;
+            display: none;
+        }
+    }
+
+    .links ul {
+        padding-left: 0;
+
+        li {
+            padding: 0 15px 0 15px;
+            display: inline-block;
+
+            a {
+                color: hsl(0, 0%, 100%);
+                text-decoration: none;
+                font-size: 20px;
+
+                &:hover {
+                    border-bottom: 2px solid hsl(0, 0%, 100%);
+                    transition: all .2s;
+                }
+            }
+        }
+    }
+
+    .intro {
+        text-transform: uppercase;
+        color: hsl(0, 0%, 100%);
+        font-size: 3rem;
+        font-weight: 200;
+        width: 35%;
+        border: 2px solid hsl(0, 0%, 100%);
+        padding: 10px 20px 10px 20px;
+        margin: 4rem 0;
+    }
+}
+
+// ? Fin du header
+
+// ? début de la section interractive
+.interractive {
+
+    .image-mobile {
+        display: none;
+    }
+
+    padding: 8%;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+
+    .text {
+        position: absolute;
+        bottom: 7%;
+        left: 49.6%;
+        right: 8%;
+        background-color: hsl(0, 0%, 100%);
+        padding: 4rem 3.5rem;
+
+        h1 {
+            text-transform: uppercase;
+            font-size: 36px;
+            font-weight: lighter;
+            letter-spacing: 5px;
+            word-spacing: 5px;
+            padding-bottom: 20px;
+        }
+
+        p {
+            color: hsl(0, 0%, 55%);
+        }
+
+    }
+}
+
+// ? Fin de la section interractive
+
+// ! début de la section creations
+.creations {
+    padding: 0 8% 8%;
+
+    .topic {
+        margin-bottom: 3rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h2 {
+            text-transform: uppercase;
+            font-size: 36px;
+            font-weight: lighter;
+            letter-spacing: 5px;
+
+        }
+
+        .see-all {
+            margin-right: .5%;
+        }
+
+        a {
+            border: 1px solid hsl(0, 0%, 0%);
+            text-decoration: none;
+            color: hsl(0, 0%, 0%);
+            padding: 5px 30px;
+            border-radius: 2px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+
+            &:hover {
+                color: hsl(0, 0%, 100%);
+                background-color: hsl(0, 0%, 0%);
+            }
+        }
+    }
+
+    .container-mobile {
+        display: none;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+
+        img {
+            filter: brightness(50%);
+        }
+
+        :is(#grid, #earth) {
+            width: 30%;
+        }
+
+        figure {
+            width: auto;
+            height: 452px;
+        }
+
+        figcaption {
+            text-transform: uppercase;
+            color: hsl(0, 0%, 100%);
+            font-size: 26px;
+            width: 55%;
+            position: relative;
+            bottom: 6.5rem;
+            left: 2rem;
+        }
+
+    }
+}
+
+// ! fin de la section creations
+
+// ! début du footer
+footer {
+    padding: 3rem 8%;
+    background-color: hsl(0, 0%, 0%);
+    display: flex;
+    justify-content: space-between;
+
+    .links {
+        ul {
+            padding: 2rem 0 0 0;
+
+            li {
+                display: inline-block;
+                padding-right: 30px;
+
+                a {
+                    color: hsl(0, 0%, 100%);
+                    text-decoration: none;
+
+                    &:hover {
+                        border-bottom: 2px solid hsl(0, 0%, 100%);
+                        transition: all .2s;
+                    }
+                }
+
+            }
+
+        }
+
+    }
+
+    .contact {
+        .social-media {
+            text-align: right;
+
+            ul {
+
+                li {
+                    display: inline-block;
+                    padding: 0 15px;
+
+                    a:hover {
+                        border-bottom: 2px solid white;
+                        transition: all .2s;
+                    }
+                }
+            }
+        }
+
+        .copyrights {
+            color: hsl(0, 0%, 55%);
+            padding: 2.3rem 0 0 0;
+        }
+    }
+}
+
+// ! fin du footer
+
+// ! responsive design
+@media screen and (width<=1097px) {
+    .interractive {
+        .text {
+            h1 {
+                font-size: 30px;
+            }
+        }
+    }
+}
+
+@media screen and (width<=1025px) {
+    header {
+        .intro {
+            font-size: 2rem
+        }
+    }
+}
+
+@media screen and (width<=990px) {
+    .interractive {
+        flex-direction: column;
+
+        .image-desktop {
+            width: 80%;
+            padding: 0;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .text {
+            position: static;
+            text-align: center;
+        }
+    }
+}
+
+@media screen and (width<=875px) {
+    header {
+        position: relative;
+        overflow: hidden;
+
+        #menu {
+            #openMenu {
+                display: block;
+            }
+
+            #closeMenu {
+                display: none;
+                z-index: 2;
+            }
+
+            .logo {
+                z-index: 2;
+            }
+
+            .links {
+                position: absolute;
+                background-color: hsl(0, 0%, 0%);
+                height: 100%;
+                width: 100%;
+                top: 0;
+                right: -100%;
+                transition: right .5s;
+
+                ul {
+                    position: absolute;
+                    top: 30%;
+                    left: 45px;
+
+                    li {
+                        display: block;
+                        padding: 10px 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .interractive {
+        .text {
+            h1 {
+                text-align: center;
+            }
+        }
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+
+        .links {
+            margin-bottom: 2rem;
+        }
+
+        .social-media {
+            text-align: center;
+            margin: 1.5rem 0;
+            margin-top: 1rem;
+
+            ul {
+                text-align: center;
+
+                li {
+                    padding: 0 10px;
+                }
+            }
+        }
+
+        .contact {
+
+            .copyrights {
+                padding-top: 10px;
+            }
+        }
+    }
+}
+
+@media screen and (width<=645px) {
+    header {
+        .intro {
+            font-size: 2rem;
+            width: inherit;
+        }
+    }
+
+    .interractive {
+        flex-direction: column;
+
+        .text {
+            position: static;
+            text-align: center;
+            padding: 1rem 1rem 0 1rem;
+
+            h1 {
+                font-size: 30px;
+                word-spacing: 0;
+                font-weight: 300;
+            }
+        }
+
+        .image-mobile {
+            display: block;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .image-desktop {
+            display: none;
+        }
+    }
+
+    .creations {
+        position: relative;
+
+        .topic {
+            flex-direction: column;
+            text-align: center;
+
+            h2 {
+                font-size: 25px;
+                font-weight: normal;
+            }
+
+            .see-all {
+                position: absolute;
+                bottom: 0;
+                margin-bottom: 1rem;
+            }
+        }
+
+        .container {
+            display: none;
+        }
+
+        .container-mobile {
+            width: 100%;
+            display: block;
+            position: relative;
+            margin-bottom: 2rem;
+
+            figure {
+                width: 100%;
+                position: relative;
+                margin-bottom: 20px;
+
+                figcaption {
+                    text-transform: uppercase;
+                    color: hsl(0, 0%, 100%);
+                    font-size: 26px;
+                    width: 45%;
+                    position: absolute;
+                    bottom: 1.5rem;
+                    left: 1rem;
+                }
+
+                img {
+                    filter: brightness(50%);
+                    width: inherit;
+                }
+
+                :is(.deep, .grid) {
+                    width: 20%;
+                }
+            }
+        }
+    }
+
+    footer {
+        margin-top: 4rem;
+    }
+}
+
+@media screen and (width<530px) {
+    header {
+        background-image: url('./images/mobile/image-hero.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    footer {
+        .links {
+            ul {
+                li {
+                    display: block;
+                    padding: 10px 0;
+                }
+            }
+        }
+
+        .contact {
+            .social-media {
+                width: fit-content;
+                padding: 0;
+                margin: 0 auto;
+
+                ul {
+                    width: fit-content;
+                    margin: 0 auto;
+                    padding: 0;
+
+                    li {
+                        padding: 0 8px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (width<=437px) {
+    .interractive .text h1 {
+        font-size: 18px;
+    }
+}
+
+// ! responsive design
