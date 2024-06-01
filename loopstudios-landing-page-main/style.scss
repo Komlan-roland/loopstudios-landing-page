@@ -285,6 +285,7 @@ footer {
         overflow: hidden;
 
         #menu {
+
             #openMenu {
                 display: block;
             }
@@ -292,6 +293,7 @@ footer {
             #closeMenu {
                 display: none;
                 z-index: 2;
+                transition: display 5s;
             }
 
             .logo {

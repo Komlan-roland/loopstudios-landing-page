@@ -219,6 +219,7 @@ footer .contact .copyrights {
   header #menu #closeMenu {
     display: none;
     z-index: 2;
+    transition: display 5s;
   }
   header #menu .logo {
     z-index: 2;
